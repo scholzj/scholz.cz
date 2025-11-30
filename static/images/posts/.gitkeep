@@ -1,0 +1,8 @@
+# Blog post images directory
+# Place images for blog posts here, e.g.:
+# - static/images/posts/my-post-featured.jpg
+# - static/images/posts/my-post-diagram.png
+# 
+# Then reference them in your blog post front matter as:
+# image: "images/posts/my-post-featured.jpg"
+
