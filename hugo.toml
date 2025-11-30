@@ -14,9 +14,6 @@ theme = 'massively'
     title = "Jakub Scholz"
     description = "Strimzi Maintainer, CNCF Ambassador, Senior Principal Software Engineer at Red Hat"
   
-  # Blog posts are now managed as markdown files in content/posts/
-  # The latest post automatically appears as the featured post on the homepage
-  
   [[params.social]]
     name = "GitHub"
     icon = "fa-github"
@@ -62,10 +59,6 @@ theme = 'massively'
     name = "Blog"
     url = "/blog/"
     weight = 5
-  [[menu.main]]
-    name = "About me"
-    url = "/about-me/"
-    weight = 10
 
 [caches]
   [caches.images]

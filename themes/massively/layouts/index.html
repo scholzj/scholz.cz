@@ -1,101 +1,31 @@
 {{ define "main" }}
 
-	{{ $posts := where .Site.RegularPages "Section" "posts" }}
-	{{ $posts = $posts.ByDate.Reverse }}
-	{{ $paginator := .Paginate $posts }}
+	{{ $aboutMe := .Site.GetPage "/about-me" }}
 	
-	{{ $featured := index $paginator.Pages 0 }}
-	{{ $regularPosts := after 1 $paginator.Pages }}
-
-	<!-- Featured Post -->
-		<article class="post featured">
+	{{ if $aboutMe }}
+	<!-- About Me -->
+		<section class="post">
 			<header class="major">
-				{{ with $featured }}
-				<span class="date">{{ .Date.Format "January 2, 2006" }}</span>
-				<h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-				<p>{{ .Params.description | default .Summary }}</p>
-				{{ else }}
-				<span class="date">{{ now.Format "January 2, 2006" }}</span>
-				<h2><a href="#">And this is a<br />
-				massive headline</a></h2>
-				<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-				facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-				amet nullam sed etiam veroeros.</p>
+				<h1>{{ $aboutMe.Title }}</h1>
+				{{ if $aboutMe.Params.description }}
+				<p>{{ $aboutMe.Params.description }}</p>
 				{{ end }}
 			</header>
-			{{ with $featured }}
-			{{ $imgPath := .Params.image | default "images/pic01.jpg" }}
+			{{ if $aboutMe.Params.image }}
+			{{ $imgPath := $aboutMe.Params.image }}
 			{{ if not (hasPrefix $imgPath "/") }}{{ $imgPath = printf "/%s" $imgPath }}{{ end }}
-			<a href="{{ .RelPermalink }}" class="image main"><img src="{{ $imgPath }}" alt="" /></a>
-			{{ else }}
-			<a href="#" class="image main"><img src="/images/pic01.jpg" alt="" /></a>
+			<div class="image main"><img src="{{ $imgPath }}" alt="" /></div>
 			{{ end }}
-			<ul class="actions special">
-				<li><a href="{{ $featured.RelPermalink | default "#" }}" class="button large">Full Story</a></li>
-			</ul>
-		</article>
-
-	<!-- Posts -->
-		<section class="posts">
-			{{ range $regularPosts }}
-			<article>
-				<header>
-					<span class="date">{{ .Date.Format "January 2, 2006" }}</span>
-					<h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-				</header>
-				{{ $imgPath := .Params.image | default "images/pic02.jpg" }}
-				{{ if not (hasPrefix $imgPath "/") }}{{ $imgPath = printf "/%s" $imgPath }}{{ end }}
-				<a href="{{ .RelPermalink }}" class="image fit"><img src="{{ $imgPath }}" alt="" /></a>
-				<p>{{ .Params.description | default .Summary }}</p>
-				<ul class="actions special">
-					<li><a href="{{ .RelPermalink }}" class="button">Full Story</a></li>
-				</ul>
-			</article>
-			{{ end }}
+			{{ $aboutMe.Content }}
 		</section>
-
-	<!-- Footer -->
-		<footer>
-			<div class="pagination">
-				{{ if $paginator.HasPrev }}
-				<a href="{{ $paginator.Prev.URL }}" class="previous">Prev</a>
-				{{ end }}
-				
-				{{ $currentPage := $paginator.PageNumber }}
-				{{ $totalPages := $paginator.TotalPages }}
-				{{ $prevPageNum := 0 }}
-				
-				{{ range $paginator.Pagers }}
-					{{ $pageNum := .PageNumber }}
-					{{ $showThisPage := false }}
-					
-					{{ if le $totalPages 7 }}
-						{{ $showThisPage = true }}
-					{{ else }}
-						{{ if or (le $pageNum 3) (gt $pageNum (sub $totalPages 2)) }}
-							{{ $showThisPage = true }}
-						{{ else if and (ge $pageNum (sub $currentPage 1)) (le $pageNum (add $currentPage 1)) }}
-							{{ $showThisPage = true }}
-						{{ end }}
-					{{ end }}
-					
-					{{ if $showThisPage }}
-						{{ if and (gt $pageNum (add $prevPageNum 1)) (gt $prevPageNum 0) }}
-						<span class="extra">&hellip;</span>
-						{{ end }}
-						{{ if eq $pageNum $currentPage }}
-						<a href="{{ .URL }}" class="page active">{{ $pageNum }}</a>
-						{{ else }}
-						<a href="{{ .URL }}" class="page">{{ $pageNum }}</a>
-						{{ end }}
-						{{ $prevPageNum = $pageNum }}
-					{{ end }}
-				{{ end }}
-				
-				{{ if $paginator.HasNext }}
-				<a href="{{ $paginator.Next.URL }}" class="next">Next</a>
-				{{ end }}
-			</div>
-		</footer>
+	{{ else }}
+	<!-- Fallback if about-me page not found -->
+		<section class="post">
+			<header class="major">
+				<h1>About me</h1>
+			</header>
+			<p>About me page not found.</p>
+		</section>
+	{{ end }}
 
 {{ end }}

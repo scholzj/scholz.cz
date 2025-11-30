@@ -37,7 +37,7 @@
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="{{ if .IsHome }}active{{ end }}"><a href="{{ "/" | relURL }}">Home</a></li>
+							<li class="{{ if .IsHome }}active{{ end }}"><a href="{{ "/" | relURL }}">About me</a></li>
 							{{ range .Site.Menus.main }}
 							<li class="{{ if eq $.RelPermalink .URL }}active{{ end }}"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
 							{{ end }}
