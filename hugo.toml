@@ -1,0 +1,65 @@
+baseURL = 'https://scholz.cz/'
+languageCode = 'en-us'
+title = 'Jakub Scholz'
+theme = 'massively'
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  logo = "Jakub Scholz"
+  copyright = "Jakub Scholz"
+  
+  [params.intro]
+    title = "Jakub Scholz"
+    description = "Strimzi Maintainer, CNCF Ambassador, Senior Principal Software Engineer at Red Hat"
+  
+  [[params.social]]
+    name = "GitHub"
+    icon = "fa-github"
+    url = "https://github.com/scholzj"
+  
+  [[params.social]]
+    name = "LinkedIn"
+    icon = "fa-linkedin"
+    url = "https://www.linkedin.com/in/scholzj/"
+  
+  [[params.social]]
+    name = "YouTube"
+    icon = "fa-youtube"
+    url = "https://www.youtube.com/@scholzj/videos"
+
+  [[params.social]]
+    name = "Twitter"
+    icon = "fa-twitter"
+    url = "https://x.com/scholzj"
+  
+  [[params.social]]
+    name = "Bluesky"
+    icon = "fa-bluesky"
+    url = "https://bsky.app/profile/scholzj.bsky.social"
+      
+  [[params.social]]
+    name = "Facebook"
+    icon = "fa-facebook-f"
+    url = "https://www.facebook.com/jakub.scholz/"
+
+  [[params.social]]
+    name = "Instagram"
+    icon = "fa-instagram"
+    url = "https://www.instagram.com/jakubsch"
+
+  [params.contact]
+    address = "1234 Somewhere Road #87257<br />Nashville, TN 00000-0000"
+    phone = "(000) 000-0000"
+    email = "info@untitled.tld"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 5
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

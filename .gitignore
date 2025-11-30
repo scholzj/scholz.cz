@@ -1,0 +1,70 @@
+# Hugo
+/public/
+/resources/
+.hugo_build.lock
+
+# Hugo cache
+.hugo_cache/
+
+# Backup files
+*.bak
+public.bak/
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Node modules (if using npm/node)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+npm-shrinkwrap.json
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Theme archives (already extracted)
+*.zip
+html5up-massively.zip
+
+# Dart Sass
+.dart_tool/
+.packages
+pubspec.lock
+
+# Hugo extended (if using)
+hugo.exe
+hugo.darwin
+hugo.linux
+
