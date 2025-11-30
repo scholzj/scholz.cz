@@ -50,8 +50,7 @@ Edit `hugo.toml` to customize:
 
 ## Content
 
-- `content/generic.md` - Generic page template
-- `content/elements.md` - Elements reference page
+- `content/generic.md` - About me page
 
 ## Theme
 

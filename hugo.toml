@@ -1,4 +1,4 @@
-baseURL = 'https://scholzj.github.io/scholz.cz/'
+baseURL = 'https://scholz.cz/'
 languageCode = 'en-us'
 title = 'Jakub Scholz'
 theme = 'massively'
@@ -63,13 +63,9 @@ theme = 'massively'
     url = "/blog/"
     weight = 5
   [[menu.main]]
-    name = "Generic Page"
-    url = "/generic/"
+    name = "About me"
+    url = "/about-me/"
     weight = 10
-  [[menu.main]]
-    name = "Elements Reference"
-    url = "/elements/"
-    weight = 20
 
 [caches]
   [caches.images]
