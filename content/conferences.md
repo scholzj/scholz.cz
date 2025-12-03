@@ -7,7 +7,7 @@ image: "images/conferences.jpg"
 
 * **The Cost of Apache Kafka**
   * KubeCon NA, Atlanta, Nov 10th, 2025
-  * With Rajith Attapattu)
+  * With Rajith Attapattu
   * [Recording](https://youtu.be/8f7kBANJQLU)
 
 * **Autoscaling Apache Kafka brokers on Kubernetes with Strimzi**
