@@ -59,6 +59,11 @@ theme = 'massively'
     name = "Blog"
     url = "/blog/"
     weight = 5
+  
+  [[menu.main]]
+    name = "Conferences"
+    url = "/conferences/"
+    weight = 6
 
 [caches]
   [caches.images]
