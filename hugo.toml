@@ -12,7 +12,7 @@ theme = 'massively'
   
   [params.intro]
     title = "Jakub Scholz"
-    description = "Strimzi Maintainer, CNCF Ambassador, Senior Principal Software Engineer at Red Hat"
+    description = "Strimzi Maintainer, CNCF Ambassador, Software developer"
   
   [[params.social]]
     name = "GitHub"
